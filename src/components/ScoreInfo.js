@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 
 class ScoreInfo extends Component {
-    render() {
-        return (
 
+    render() {
+        // console.log(this.props.score)
+        
+        
+        return (
+            
             <div>
                 <div>
 
-  <h2>Score:</h2>
-  <button>Add Points</button>
+  {/* <h2>Score: {this.props.score}</h2> */}
+  {/* <button>Add Points</button>
   <button>Subtract Points</button>
-  <button>Reset</button>
+  <button>Reset</button> */}
 
 </div>
             </div>

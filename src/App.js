@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 
 import TriviaInfo from './components/TriviaInfo'
 
-import ScoreInfo from './components/ScoreInfo';
-
 class App extends Component {
 
   state = {
@@ -28,24 +26,28 @@ class App extends Component {
 
   }
 
-  handleAdd= e => {
+  handleAdd = e => {
     // console.log('add', this.state.score)
-    this.setState({score: this.state.score +1 })
-    
+    this.setState({ score: this.state.score + 1 })
+
   }
 
   handleSubtract = e => {
     // console.log('subtract')
-    this.setState({score: this.state.score - 1 })
+    this.setState({ score: this.state.score - 1 })
   }
 
   render() {
     // console.log(this.state.score)
     return (
-      <div>
+      <div className="container">
+<div className="cont-less">
 
-        <h1>Welcome To Jeopardy!</h1>
+        <header><h1 id="header">Welcome To Jeopardy!</h1></header>
+
+        <div id='triv-info'>
         <TriviaInfo triviaInfo={this.state.triviaInfo} />
+        
 
         <button type='submit' onClick={this.handleSubmit}>Click for Question</button>
 
@@ -53,18 +55,20 @@ class App extends Component {
         {
           this.state.toggle ? <h4>Answer: {this.state.triviaInfo.answer}</h4> : null
         }
+</div>
 
-        {/* <h2>Score: {this.state.score}</h2> */}
-<h2>Score:{this.state.score}</h2>
+<div id='score-info'>
+        <h2>Score:{this.state.score}</h2>
 
         <button onClick={this.handleAdd}>Add Points</button>
 
         <button onClick={this.handleSubtract}>Subtract Points</button>
 
         <button>Reset</button>
+        </div>
 
-        {/* <ScoreInfo /> */}
 
+        </div>
       </div>
     );
   }
